@@ -1,7 +1,6 @@
 package dudu.pp.chapter1;
 
 import com.google.common.collect.Sets;
-import com.google.common.primitives.Ints;
 import dudu.pp.Utils;
 
 import java.util.Arrays;
@@ -23,14 +22,14 @@ public class BitSetSort {
      * @param array
      * @return
      */
-    public static int[] bitSetSort(Integer[] array) {
+    public static Integer[] bitSetSort(Integer[] array) {
         checkUnique(array);
 
         BitSet bitSet = new BitSet();
         for (int i = 0; i < array.length; i++) {
             bitSet.set(array[i],true);
         }
-        int[] result = new int[array.length];
+        Integer[] result = new Integer[array.length];
         for (int i = 0,index = 0; i < bitSet.length(); i++) {
             if(bitSet.get(i)){
                 result[index] = i;
@@ -55,7 +54,7 @@ public class BitSetSort {
 
         System.out.println("before sort");
         System.out.println(Arrays.asList(array));
-        System.out.println(Ints.asList(bitSetSort(array)));
+        System.out.println(Arrays.asList(bitSetSort(array)));
     }
 
 
