@@ -18,7 +18,7 @@ public class BitSetSortTest {
 
     @Before
     public void setUp() throws Exception {
-        array = RadomInts.randomIntegers(1000000, 1000000000);
+        array = RandomInts.randomIntegers(1000000, 1000000000);
         Utils.shuffle(array);
     }
 

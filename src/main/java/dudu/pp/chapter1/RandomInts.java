@@ -9,7 +9,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 /**
  * Created by jadetang on 15-1-14.
  */
-public class RadomInts {
+public class RandomInts {
 
     /**
      * generate k integers less than n without duplicate
