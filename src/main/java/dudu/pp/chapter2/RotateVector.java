@@ -28,10 +28,30 @@ public class RotateVector {
         array[index] = temp;
     }*/
 
-    public static void rotaleLeft2(Object[] array, int offset){
+    public static void rotateLeft2(Object[] array, int offset){
         Utils.reverse(array, 0, offset - 1);
         Utils.reverse(array, offset, array.length - 1);
         Utils.reverse(array, 0, array.length - 1);
     }
+
+    public static void rotateLeft3(Object[] array,int offset){
+        int n = array.length;
+        int gcd = Utils.gcd(n,offset);
+        for (int i = 0; i < gcd; i++) {
+            Object temp = array[i];
+            int index = i;
+            while(true){
+                int k = index + gcd;
+                if (k >= n)  k -= n;
+                if (k == i) break;
+                array[index] = array[k];
+                index = k;
+            }
+            array[index] = temp;
+        }
+    }
+
+
+
 
 }
