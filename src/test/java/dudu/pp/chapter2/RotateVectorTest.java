@@ -26,5 +26,8 @@ public class RotateVectorTest {
         RotateVector.rotateLeft3(array,5);
         System.out.println(Arrays.asList(array));
         Assert.assertEquals(array,expected);
+
+
+
     }
 }
