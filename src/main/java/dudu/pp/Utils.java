@@ -1,6 +1,5 @@
 package dudu.pp;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -20,11 +19,11 @@ public class Utils {
         random = new Random(seed);
     }
 
-    public static void shuffle(Object[] a) {
+    public static void shuffle(int[] a) {
         int N = a.length;
         for (int i = 0; i < N; i++) {
             int r = i + uniform(N - i);     // between i and N-1
-            Object temp = a[i];
+            int temp = a[i];
             a[i] = a[r];
             a[r] = temp;
         }
@@ -35,13 +34,13 @@ public class Utils {
         return random.nextInt(N);
     }
 
-    public static void exechange(Object[] array, int l, int r) {
-        Object temp = array[l];
+    public static void exechange(int[] array, int l, int r) {
+        int temp = array[l];
         array[l] = array[r];
         array[r] = temp;
     }
 
-    public static void reverse(Object[] array, int from, int to) {
+    public static void reverse(int[] array, int from, int to) {
         for (int i = 0; i <= (to - from) / 2; i++) {
             exechange(array, from + i, to - i);
         }
@@ -72,11 +71,47 @@ public class Utils {
     }
 
 
-    public static void main(String[] args) {
-        Integer[] a = new Integer[]{5, 4, 3, 2, 1, 6, 7, 8, 9, 10, 11, 12};
-        reverse(a, 5, a.length - 1);
-        System.out.println(Arrays.asList(a));
+
+
+    public static int[] randomInts(int n,int k){
+        return randomInts(n,k,true);
+    }
+    public static int[] randomInts(int n,int k,boolean allPositive){
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+            int temp = random.nextInt(k);
+            if(!allPositive){
+                temp = random.nextBoolean()? temp:-temp;
+            }
+            result[i] = temp;
+        }
+        return result;
+    }
+
+    public static void prints(int[] array){
+        prints(array,0,array.length-1);
     }
 
 
+    public static void prints(int[] array,int from,int to){
+        System.out.print("[ ");
+        for (int i = from; i < to; i++) {
+            System.out.print(" " + array[i] + ",");
+        }
+        System.out.println(" " + array[to] + "]");
+    }
+
+
+
+
+
+
+    public static boolean isSorted(int[] array) {
+        for (int i = 1 ; i < array.length ; i++) {
+            if(array[i]<array[i-1]){
+                return false;
+            }
+        }
+        return true;
+    }
 }

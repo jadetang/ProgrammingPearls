@@ -1,7 +1,8 @@
 package dudu.pp;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Created by jadetang on 15-1-18.
@@ -13,6 +14,6 @@ public class UtilsTest {
 
     @Test
     public void testBinarySearch() throws Exception {
-        Assert.assertEquals(Utils.binarySearch(sorted,2),new Integer(1));
+        Assert.assertEquals(Utils.binarySearch(sorted, 2), new Integer(1));
     }
 }

@@ -17,12 +17,12 @@ public class BitSetSort {
      * @param array
      * @return
      */
-    public static Integer[] bitSetSort(Integer[] array) {
+    public static int[] bitSetSort(int[] array) {
         BitSet bitSet = new BitSet();
         for (int i = 0; i < array.length; i++) {
             bitSet.set(array[i],true);
         }
-        Integer[] result = new Integer[array.length];
+        int[] result = new int[array.length];
         for (int i = 0,index = 0; i < bitSet.length(); i++) {
             if(bitSet.get(i)){
                 result[index] = i;
@@ -34,7 +34,7 @@ public class BitSetSort {
 
     public static void main(String[] args) {
         int size = 1000;
-        Integer[] array = new Integer[size];
+        int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
             array[i] = i;
         }

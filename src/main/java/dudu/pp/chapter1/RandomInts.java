@@ -16,9 +16,9 @@ public class RandomInts {
      * @return
      */
 
-    public static Integer[] randomIntegers(int k, int n) {
+    public static int[] randomIntegers(int k, int n) {
         checkArgument(k <= n);
-        Integer[] ints = new Integer[k];
+        int[] ints = new int[k];
         int select = k;
         int remain = n;
         Random  r= new Random();

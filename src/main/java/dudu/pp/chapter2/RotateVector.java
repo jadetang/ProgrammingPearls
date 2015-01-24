@@ -28,7 +28,7 @@ public class RotateVector {
         array[index] = temp;
     }*/
 
-    public static void rotateLeft2(Object[] array, int offset){
+    public static void rotateLeft2(int[] array, int offset){
         Utils.reverse(array, 0, offset - 1);
         Utils.reverse(array, offset, array.length - 1);
         Utils.reverse(array, 0, array.length - 1);

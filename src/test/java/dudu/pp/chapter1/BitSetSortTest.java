@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class BitSetSortTest {
 
-    Integer[] array;
+    int[] array;
 
     @Before
     public void setUp() throws Exception {
@@ -25,7 +25,7 @@ public class BitSetSortTest {
     @Test
     public void testBitSetSort() throws Exception {
         Stopwatch stopwatch = Stopwatch.createStarted();
-        Integer[] sorted = BitSetSort.bitSetSort(array);
+        int[] sorted = BitSetSort.bitSetSort(array);
         System.out.println("bieset sort take " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
 
         stopwatch.reset();
