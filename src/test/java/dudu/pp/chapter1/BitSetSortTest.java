@@ -2,9 +2,9 @@ package dudu.pp.chapter1;
 
 import com.google.common.base.Stopwatch;
 import dudu.pp.Utils;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +16,7 @@ public class BitSetSortTest {
 
     int[] array;
 
-    @Before
+    @BeforeTest
     public void setUp() throws Exception {
         array = RandomInts.randomIntegers(15000000, 200000000);
         Utils.shuffle(array);
@@ -33,7 +33,7 @@ public class BitSetSortTest {
         Arrays.sort(array);
         System.out.println("Arrays sort take " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
 
-        Assert.assertArrayEquals(array, sorted);
+        Assert.assertTrue(Utils.isSorted(sorted));
 
 
     }

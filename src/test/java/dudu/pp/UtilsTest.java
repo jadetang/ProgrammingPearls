@@ -1,8 +1,8 @@
 package dudu.pp;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  * Created by jadetang on 15-1-18.

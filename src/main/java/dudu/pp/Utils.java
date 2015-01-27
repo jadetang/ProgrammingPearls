@@ -35,6 +35,9 @@ public class Utils {
     }
 
     public static void exechange(int[] array, int l, int r) {
+        if(l == r){
+            return;
+        }
         int temp = array[l];
         array[l] = array[r];
         array[r] = temp;

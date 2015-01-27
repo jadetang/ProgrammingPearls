@@ -47,17 +47,33 @@ public class SortTest {
         int[] unsort = Utils.randomInts(10000000, 15000000, false);
         int[] unsort2 = Arrays.copyOf(unsort, unsort.length);
         int[] unsort3 = Arrays.copyOf(unsort, unsort.length);
-        Stopwatch stopwatch = Stopwatch.createStarted();
-        Sort.quickSort1(unsort);
-        System.out.println("quick sort 1 take:" + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "mm");
-        stopwatch.reset().start();
-        Sort.quickSort2(unsort2);
-        System.out.println("quick sort 2 take:" + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "mm");
-        Arrays.sort(unsort2);
-        System.out.println("System sort take:" + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "mm");
-        Assert.assertTrue(Utils.isSorted(unsort));
-        Assert.assertTrue(Utils.isSorted(unsort2));
+        int[] unsort4 = Arrays.copyOf(unsort, unsort.length);
+        sort("qsort1",unsort);
+        sort("qsort2",unsort2);
+        sort("system",unsort3);
+        sort("qsortWithCutOff",unsort4);
+    }
 
+
+    private void sort(String name,int[] unsort){
+        Stopwatch stopwatch = Stopwatch.createStarted();
+        switch (name){
+            case "qsort1":
+                Sort.quickSort1(unsort);
+                break;
+            case "qsort2":
+                Sort.quickSort2(unsort);
+                break;
+            case "system":
+                Arrays.sort(unsort);
+                break;
+            case "qsortWithCutOff":
+                Sort.quickSortWithCutOff(unsort);
+                break;
+            default: throw new UnsupportedOperationException();
+        }
+        System.out.println(name+ " take:" + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "mm");
+        Assert.assertTrue(Utils.isSorted(unsort));
     }
 
 
