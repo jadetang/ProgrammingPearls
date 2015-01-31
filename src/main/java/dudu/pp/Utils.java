@@ -1,6 +1,8 @@
 package dudu.pp;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 /**
  * @author tangsicheng
@@ -117,4 +119,13 @@ public class Utils {
         }
         return true;
     }
+
+    public static boolean distinct(int[] array){
+        Set temp = new HashSet();
+        for (int i = 0; i < array.length; i++) {
+            temp.add(array[i]);
+        }
+        return temp.size() == array.length;
+    }
+
 }

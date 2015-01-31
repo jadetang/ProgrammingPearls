@@ -22,6 +22,7 @@ public class BitSetSort {
         for (int i = 0; i < array.length; i++) {
             bitSet.set(array[i],true);
         }
+        assert bitSet.cardinality() == array.length;
         int[] result = new int[array.length];
         for (int i = 0,index = 0; i < bitSet.length(); i++) {
             if(bitSet.get(i)){
