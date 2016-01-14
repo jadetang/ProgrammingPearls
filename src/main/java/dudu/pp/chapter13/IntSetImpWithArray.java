@@ -42,4 +42,14 @@ public class IntSetImpWithArray extends IntSet {
     public int[] report() {
         return Arrays.copyOf(array, array.length - 1);
     }
+
+    @Override
+    public boolean find(int x) {
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] == x){
+                return true;
+            }
+        }
+        return false;
+    }
 }

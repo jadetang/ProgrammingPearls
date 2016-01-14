@@ -36,4 +36,9 @@ public class IntSetImpWithTreeSet extends IntSet {
         }
         return result;
     }
+
+    @Override
+    public boolean find(int x) {
+        return innerSert.contains(x);
+    }
 }

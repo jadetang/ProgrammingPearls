@@ -35,11 +35,11 @@ public class InSetImplWithBinaryTree extends IntSet {
             size += 1;
             return newNode;
         }
-        int cmp = Ints.compare(t,x.value);
-        if(cmp < 0 ){
-            x.left = insert(x.left,t);
-        }else if(cmp>0){
-            x.right = insert(x.right,t);
+        int cmp = Ints.compare(t, x.value);
+        if (cmp < 0) {
+            x.left = insert(x.left, t);
+        } else if (cmp > 0) {
+            x.right = insert(x.right, t);
         }
         return x;
     }
@@ -52,19 +52,37 @@ public class InSetImplWithBinaryTree extends IntSet {
     @Override
     public int[] report() {
         List result = Lists.newLinkedList();
-        travese(root.left,result);
-        int[] result2 =  Ints.toArray(result);
+        travese(root.left, result);
+        int[] result2 = Ints.toArray(result);
         return result2;
 
     }
 
+    @Override
+    public boolean find(int x) {
+        return find(root, x);
+    }
+
+    private boolean find(Node n, int x) {
+        if (n == null) {
+            return false;
+        }
+        int cmp = Ints.compare(x, n.value);
+        if (cmp < 0) {
+            return find(n.left, x);
+        } else if (cmp > 0) {
+            return find(n.right, x);
+        }
+        return true;
+    }
+
     private void travese(Node x, List result) {
-        if(x == null ){
+        if (x == null) {
             return;
         }
-        travese(x.left,result);
+        travese(x.left, result);
         result.add(x.value);
-        travese(x.right,result);
+        travese(x.right, result);
     }
 
     private static class Node {

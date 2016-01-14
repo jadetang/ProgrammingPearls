@@ -55,6 +55,18 @@ public class InSetImpWithLinkedList extends IntSet {
         return result;
     }
 
+    @Override
+    public boolean find(int x) {
+        Node temp = head;
+        while (temp !=null){
+            if(temp.value == x){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
 
     private static class Node {
         int value;

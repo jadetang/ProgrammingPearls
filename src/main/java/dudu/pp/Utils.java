@@ -106,7 +106,10 @@ public class Utils {
         System.out.println(" " + array[to] + "]");
     }
 
-
+    public static int bigRand(){
+        Random r = new Random();
+        return r.nextInt(Integer.MAX_VALUE);
+    }
 
 
 

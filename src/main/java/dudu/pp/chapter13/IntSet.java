@@ -12,4 +12,7 @@ public abstract class IntSet {
     public abstract int size();
 
     public abstract int[] report();
+
+    public abstract boolean find(int x);
+
 }

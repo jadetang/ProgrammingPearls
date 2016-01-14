@@ -1,5 +1,6 @@
 package dudu.pp.chapter13;
 
+import dudu.pp.Utils;
 import org.testng.annotations.Test;
 
 public class ClientTest {
@@ -29,6 +30,12 @@ public class ClientTest {
     private void help(int size, int maxElement, String implName) {
         Client c = new Client(size,maxElement,implName);
         c.benchMark();
+    }
+
+
+    @Test
+    public void testBobFloyd() throws Exception{
+        Utils.prints(Client.bobFloyd(10,100));
     }
 
 

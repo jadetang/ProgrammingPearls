@@ -59,6 +59,23 @@ public class Client {
         log();
     }
 
+
+    public static int[] bobFloyd(int size,int max){
+        IntSet set = new InSetImplWithBinaryTree(size,max);
+        for (int j = max-size; j < max; j++) {
+            int t = Utils.bigRand() % (j+1);
+            int oldsize = set.size();
+            set.insert(t);
+            if (set.size() == oldsize) // t already in S
+                set.insert(j);
+        }
+        return set.report();
+    }
+
+
+
+
+
     private void log() {
         System.out.printf("%s with %d element,take %d mm to setup and %d mm " +
                 "to collect\n", intset.getClass().getSimpleName(), intset.size(), setUpTime, outPutTime);

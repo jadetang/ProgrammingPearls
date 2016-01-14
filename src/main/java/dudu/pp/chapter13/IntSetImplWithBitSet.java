@@ -35,4 +35,9 @@ public class IntSetImplWithBitSet extends IntSet{
         }
         return result;
     }
+
+    @Override
+    public boolean find(int x) {
+        return innerSet.get(x);
+    }
 }
